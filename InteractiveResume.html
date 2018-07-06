@@ -57,7 +57,7 @@
                 position:absolute;
                 margin:0; padding:0; border:none;
                 left:0; top:0;
-                width:100%; min-width:178vh; min-height: 56vw;
+                width:100%; min-width:178vh; min-height: 100vh;
                 z-index:-1;
                 user-select:none;
                 -webkit-user-drag: none;
@@ -180,11 +180,37 @@
             #GithubPicturesCollection:hover {
                 background-color:purple;
             }
+            /*-------- S6 - Turnip Esports --------*/
+            .S6Elem {
+                position:absolute;
+                margin:0; padding:0; border:none;
+                min-width:600px;
+                left:3vw;
+                color:gold;
+                font-family:sans-serif;
+                opacity:0;
+                transition:0.4s;
+            }
+            #I6 {
+                filter:brightness(0.5);
+            }
+            #S6Text1 {
+                top:10vh;
+                font-size:calc(32px + 2vw); font-weight:700;    
+            }
+            #S6Text2 {
+                top:calc(80px + 10vh);
+                font-size:calc(20px + 0.5vw);
+            }
+            #S6Text3 {
+                top:calc(120px + 10vh);
+                font-size:calc(12px + 0.5vw);
+            }
         </style>
     </head>
 	
     <body>
-        <img draggable = 'false' id = 'Background' src = 'Space.jpg'>
+        <img draggable = 'false' id = 'Background' src = 'Images/Space.jpg'>
         <!-- Vertical Scroll -->
         <div class = 'VerticalScroll'>
             <div class = 'ScrollIcon' id = 'First'></div>
@@ -211,11 +237,11 @@
         <section class ='Section'>
             <div class = 'S3Elem' id = 'S3Text1'>Programming Skills</div>
             <div id = 'SkillBar'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'Html.jpg'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'Css.jpg'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'Javascript.jpg'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'git.jpg'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'CCpp.jpg'>
+                <img draggable = 'false' class = 'SkillBarImage' src = 'Images/Html.jpg'>
+                <img draggable = 'false' class = 'SkillBarImage' src = 'Images/Css.jpg'>
+                <img draggable = 'false' class = 'SkillBarImage' src = 'Images/Javascript.jpg'>
+                <img draggable = 'false' class = 'SkillBarImage' src = 'Images/git.jpg'>
+                <img draggable = 'false' class = 'SkillBarImage' src = 'Images/CCpp.jpg'>
             </div>
         </section>
         <!-- S4 - Rhythm Track -->
@@ -223,17 +249,21 @@
             <div class = 'S4Elem' id = 'S4Text1'> Rhythm Track </div>
             <div class = 'S4Elem' id = 'S4Text2'> Built on Unreal Engine 4</div>
             <button class = 'S4Elem' id = 'GithubRhythmTrack' onclick = 'window.open("https://github.com/13Legend31/RhythmTrack")'> Github </button>
-            <img draggable = 'false' class = 'SectionBG' id = 'I4' src = 'RhythmTrack.jpg'>
+            <img draggable = 'false' class = 'SectionBG' id = 'I4' src = 'Images/RhythmTrack.jpg'>
         </section>
         <!-- S5 - Pictures Collection -->
         <section class ='Section'>
             <div class = 'S5Elem' id = 'S5Text1'>Image Collector</div>
             <div class = 'S5Elem' id = 'S5Text2'>Make Albums Easily</div>
             <button class = 'S5Elem' id = 'GithubPicturesCollection' onclick = 'window.open("https://github.com/13Legend31/Pictures-Website")'> Github </button>
-            <img draggable = 'false' class = 'SectionBG' id = 'I5' src = 'PicturesCollector.jpg'>
+            <img draggable = 'false' class = 'SectionBG' id = 'I5' src = 'Images/PicturesCollector.jpg'>
         </section>
+        <!-- S6 - Turnip Esports-->
         <section class ='Section'>
-            <img draggable = 'false' class = 'SectionBG' id = 'I6'>
+            <div class = 'S6Elem' id = 'S6Text1'>Turnip Esports</div>
+            <div class = 'S6Elem' id = 'S6Text2'>Host, Commentator and Coach</div> 
+            <div class = 'S6Elem' id = 'S6Text3'>Sponsored by HiRez Studios</div>
+            <img draggable = 'false' class = 'SectionBG' id = 'I6' src = 'Images/TurnipEsports.jpg'>
         </section>
         <section class ='Section'>
             <img draggable = 'false' class = 'SectionBG' id = 'I7'>
