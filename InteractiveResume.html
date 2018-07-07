@@ -2,215 +2,11 @@
 <html>
     <head>
         <meta charset = 'UTF-8'/>
-        <style>
-            html, body {
-                margin:0; padding:0; border:none;
-                overflow:hidden;
-                user-select:none;
-            }
-            div {
-                -webkit-user-select: none;
-                -moz-user-select: none; 
-                -ms-user-select: none;
-                user-select: none; 
-            }
-            #Background {
-                position:absolute;
-                margin:0; padding:0; border:none;
-                left:0; top:0;
-                width:100vw; height:100vh; min-width: 178vh; min-height: 56vw;
-                z-index:-2;
-            }
-            button {
-                cursor:pointer;
-            }
-            /*-------------- Scroll ---------------*/
-            .VerticalScroll {
-                position:absolute;
-                margin:0; padding:0; border:none;
-                right:4vw; top: 30vh;
-            }
-            .ScrollIcon {
-                position:relative;
-                margin: 4vh 0 0 0; padding:0; border:2px solid black;
-                display:block;
-                width:0.5vw; height: 1vh;
-                border-radius:50%;
-                background-color:orange;
-                opacity :0.4;
-                transition: background-color 0.4s, opacity 0.4s;
-            }
-            #First {
-                background-color:red;
-                opacity:1;
-            }
-            /* ----------------- Content -----------------------*/
-            .Section {
-                position: absolute;
-                margin:0; padding:0; border:none;
-                left:0;
-                width:100%; height:100%;
-                z-index:-1;
-                overflow:hidden;
-            }
-            .SectionBG {
-                position:absolute;
-                margin:0; padding:0; border:none;
-                left:0; top:0;
-                width:100%; min-width:178vh; min-height: 100vh;
-                z-index:-1;
-                user-select:none;
-                -webkit-user-drag: none;
-            }
-            #SkillBar {
-                position:absolute;
-                left:12.5vw; top:37.5vh;
-                width:75vw; height:25vh; min-width: 700px; min-height: 100px;
-                transition:box-shadow 0.3s;
-            }
-            #SkillBar img {
-                position:absolute;
-                width:20%; height: 100%;
-            }
-            /*-------- S2 - Education --------*/
-            .S2Elem {
-                position:absolute;
-                margin:0; padding:0; border:none;
-                min-width:600px;
-                left:3vw;
-                color:white;
-                font-family:sans-serif;
-                opacity:0;
-                transition:0.4s;
-            }
-            #S2Text1 {
-                top:10vh;
-                font-size:calc(32px + 2vw); font-weight:700;    
-            }
-            #S2Text2 {
-                top:calc(46px + 2vw + 10vh);
-                font-size:calc(20px + 0.5vw);
-            }
-            #S2Text3 {
-                top:calc(64px + 3vw + 10vh);
-                font-size:calc(12px + 0.5vw);
-            }
-            /*-------- S3 - Skills --------*/
-            .S3Elem {
-                position:absolute;
-                margin:0; padding:0; border:none;
-                min-width:600px;
-                left:3vw;
-                color:orangered;
-                font-family:sans-serif;
-                opacity:0;
-                transition:0.4s;
-            }
-            #S3Text1 {
-                top:10vh; 
-                font-size:calc(32px + 2vw); font-weight:700;       
-            }
-            /*-------- S4 - RhythmTrack --------*/
-            .S4Elem {
-                position:absolute;
-                margin:0; padding:0; border:none;
-                min-width:600px;
-                left:3vw;
-                color:red;
-                font-family:sans-serif;
-                opacity:0;
-                transition:0.4s;
-            }
-            #I4 {
-                filter:brightness(0.9);
-            }
-            #S4Text1 {
-                top:10vh; 
-                font-size:calc(32px + 2vw); font-weight:700;               
-            }
-            #S4Text2 {
-                top:calc(46px + 2vw + 10vh);
-                font-size:calc(12px + 0.5vw);
-            }
-            #GithubRhythmTrack {
-                outline:none;
-                display:inline;
-                min-width:100px; min-height:20px;
-                top:calc(70px + 3vw + 10vh);
-                background-color:lime;
-                border-radius:30%; border: 2px solid purple;
-                color: black;
-                font-size: calc(24px + 0.5vw); font-weight:700;
-            }
-            #GithubRhythmTrack:hover {
-                background-color:purple;
-            }
-            /*-------- S5 - Pictures Collector --------*/
-            .S5Elem {
-                position:absolute;
-                margin:0; padding:0; border:none;
-                min-width:600px;
-                left:3vw;
-                color:chartreuse;
-                font-family:sans-serif;
-                opacity:0;
-                transition:0.4s;
-            }
-            #I5 {
-                filter:brightness(0.7);
-            }
-            #S5Text1 {
-                top:7vh; 
-                font-size:calc(32px + 2vw); font-weight:700;  
-            }
-            #S5Text2 {
-                top:calc(46px + 2vw + 7vh);
-                font-size:calc(12px + 0.5vw);
-            }
-            #GithubPicturesCollection {
-                outline:none;
-                display:inline;
-                min-width:100px; min-height:20px;
-                top:calc(70px + 3vw + 7vh);
-                background-color:lime;
-                border-radius:30%; border: 2px solid purple;
-                color: black;
-                font-size: calc(24px + 0.5vw); font-weight:700;
-            }
-            #GithubPicturesCollection:hover {
-                background-color:purple;
-            }
-            /*-------- S6 - Turnip Esports --------*/
-            .S6Elem {
-                position:absolute;
-                margin:0; padding:0; border:none;
-                min-width:600px;
-                left:3vw;
-                color:gold;
-                font-family:sans-serif;
-                opacity:0;
-                transition:0.4s;
-            }
-            #I6 {
-                filter:brightness(0.5);
-            }
-            #S6Text1 {
-                top:10vh;
-                font-size:calc(32px + 2vw); font-weight:700;    
-            }
-            #S6Text2 {
-                top:calc(46px + 2vw + 10vh);
-                font-size:calc(20px + 0.5vw);
-            }
-            #S6Text3 {
-                top:calc(64px + 3vw + 10vh);
-                font-size:calc(12px + 0.5vw);
-            }
-        </style>
+        <link rel = 'stylesheet' type = 'text/Css' href = 'ResumeCSS.css'>
     </head>
-	
+
     <body>
-        <img draggable = 'false' id = 'Background' src = 'Images/Space.jpg'>
+        <img draggable = 'false' id = 'Background' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Space.jpg'>
         <!-- Vertical Scroll -->
         <div class = 'VerticalScroll'>
             <div class = 'ScrollIcon' id = 'First'></div>
@@ -231,162 +27,46 @@
             <div class = 'S2Elem' id = 'S2Text1'>University of Toronto</div>
             <div class = 'S2Elem' id = 'S2Text2'>Rotman School of Management</div>
             <div class = 'S2Elem' id = 'S2Text3'>Bachelor's of Commerce</div>
-            <img draggable = 'false' class = 'SectionBG' id = 'I2' src = 'Images/Rotman.jpg'>
+            <img draggable = 'false' class = 'SectionBG' id = 'I2' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Rotman.jpg'>
         </section>
         <!-- S3 - Skills -->
         <section class ='Section'>
             <div class = 'S3Elem' id = 'S3Text1'>Programming Skills</div>
             <div id = 'SkillBar'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'Images/Html.jpg'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'Images/Css.jpg'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'Images/Javascript.jpg'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'Images/git.jpg'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'Images/CCpp.jpg'>
+                <img draggable = 'false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Html.jpg'>
+                <img draggable = 'false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Css.jpg'>
+                <img draggable = 'false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Javascript.jpg'>
+                <img draggable = 'false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/git.jpg'>
+                <img draggable = 'false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/CCpp.jpg'>
             </div>
         </section>
         <!-- S4 - Rhythm Track -->
         <section class ='Section'>
+            <div class = 'SectionTitle' id = 'S4Title'>Open Source Project</div>
             <div class = 'S4Elem' id = 'S4Text1'> Rhythm Track </div>
             <div class = 'S4Elem' id = 'S4Text2'> Built on Unreal Engine 4</div>
             <button class = 'S4Elem' id = 'GithubRhythmTrack' onclick = 'window.open("https://github.com/13Legend31/RhythmTrack")'> Github </button>
-            <img draggable = 'false' class = 'SectionBG' id = 'I4' src = 'Images/RhythmTrack.jpg'>
+            <img draggable = 'false' class = 'SectionBG' id = 'I4' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/RhythmTrack.jpg'>
         </section>
         <!-- S5 - Pictures Collection -->
         <section class ='Section'>
+            <div class = 'SectionTitle' id = 'S5Title'>Open Source Project</div>
             <div class = 'S5Elem' id = 'S5Text1'>Image Collector</div>
             <div class = 'S5Elem' id = 'S5Text2'>Make Albums Easily</div>
             <button class = 'S5Elem' id = 'GithubPicturesCollection' onclick = 'window.open("https://github.com/13Legend31/Pictures-Website")'> Github </button>
-            <img draggable = 'false' class = 'SectionBG' id = 'I5' src = 'Images/PicturesCollector.jpg'>
+            <img draggable = 'false' class = 'SectionBG' id = 'I5' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/PicturesCollector.jpg'>
         </section>
         <!-- S6 - Turnip Esports-->
         <section class ='Section'>
+                <div class = 'SectionTitle' id = 'S6Title'>Startup Experience</div>
             <div class = 'S6Elem' id = 'S6Text1'>Turnip Esports</div>
             <div class = 'S6Elem' id = 'S6Text2'>Host, Commentator and Coach</div> 
             <div class = 'S6Elem' id = 'S6Text3'>Sponsored by HiRez Studios</div>
-            <img draggable = 'false' class = 'SectionBG' id = 'I6' src = 'Images/TurnipEsports.jpg'>
+            <img draggable = 'false' class = 'SectionBG' id = 'I6' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/TurnipEsports.jpg'>
         </section>
         <section class ='Section'>
             <img draggable = 'false' class = 'SectionBG' id = 'I7'>
         </section>
     </body>
-    <script>
-        'use strict';
-        // All arrays must have length NumberOfSections
-        var NumberOfSections = 7;
-        var VerticalScroll = []; 
-        var Sections = [];
-        // Initializes Page for use
-        (function() {
-            // Section related variables            
-            var NumberOfSections = 7;
-            var VerticalScroll = []; 
-            var Sections = [];
-            //------- Load In Variables -------
-            var ScrollHide = document.getElementsByClassName('ScrollIcon');
-            var Section = document.getElementsByClassName('Section');
-            for (var i = 0; i < NumberOfSections; i++) {
-                VerticalScroll.push(ScrollHide[i].style);
-                Sections.push(Section[i].style);
-            }
-            var Top = 0;
-            for (var i = 0; i < NumberOfSections; i++, Top += 100) {
-                Sections[i].top = Top + 'vh';
-            }
-            console.log("Variables Initialized");
-            //------- Add Scroll Functionality -------
-            var i = 0;
-            var ScriptReady = true;
-            function Add_MouseWheel_Functionality (e) {
-                if (ScriptReady) {
-                    ScriptReady = false;
-                    // Animate right vertical scroll
-                    VerticalScroll[i].backgroundColor = 'orange';
-                    VerticalScroll[i].opacity = '0.4';
-                    window['SectionOut'](i + 1);
-                    var up;
-                    var inc;
-                    if (e.wheelDelta < 0 || e.deltaY > 0) {
-                        inc = (i === NumberOfSections - 1) ? false : true;  
-                        i = (i === NumberOfSections - 1) ? i : i + 1;
-                        up = false;                  
-                    } else {
-                        inc = (i === 0) ? false : true; 
-                        i = (i === 0) ? i : i - 1;
-                        up = true;
-                    }
-                    VerticalScroll[i].backgroundColor = 'red';
-                    VerticalScroll[i].opacity = '1';
-                    // Move sections up or down
-                    for (var c = 0; c < NumberOfSections && inc; c++) {
-                        Sections[c].transition = '0.4s';
-                        var Top = (up) ? parseInt(Sections[c].top) + 100 : parseInt(Sections[c].top) - 100;
-                        Sections[c].top = Top + 'vh';
-                    }
-                    window['SectionIn'](i + 1);
-                    setTimeout(function() { 
-                        for (var c = 0; c < NumberOfSections; c++) {
-                            Sections[c].transition = '0s';
-                        }
-                    }, 400);
-                    setTimeout(function() { ScriptReady = true}, 400);
-                }
-            }
-            // Chrome, Firefox, IE, Edge
-            window.addEventListener('wheel', Add_MouseWheel_Functionality);
-            // Safari
-            window.addEventListener('mousewheel', Add_MouseWheel_Functionality);
-            console.log("Scroll Wheel Functional");
-            // SECTION SPECIFIC SCRIPTS
-            // S4 -Initialize Skillbar image positions
-            var SkillBarImages = document.getElementsByClassName('SkillBarImage'); 
-            var Left = 0;
-            for (var c = 0; c < SkillBarImages.length; c++, Left += 20) {
-                SkillBarImages[c].style.left = Left + '%';
-            }
-            // S4 - Add SkillBar movement functionality
-            var SkillBar = document.getElementById('SkillBar').style;
-            window.addEventListener('mousemove', function(e) {
-                if (i === 2) {
-                    var Cx = window.innerWidth/2,
-                        Cy = window.innerHeight/2,
-                        MouseX = e.pageX,
-                        MouseY = e.pageY;
-                    var VectorX = MouseX - Cx,
-                        VectorY = -(MouseY - Cy);
-                    var RotateX = VectorY/Cx,
-                        RotateY = VectorX/Cy,
-                        Deg = Math.sqrt(Math.pow(VectorX,2) + Math.pow(VectorY,2))/Math.sqrt(Math.pow(Cx,2) + Math.pow(Cy,2)) * 45; 
-                    SkillBar.transform = 'rotate3d(' + RotateX + ',' + RotateY + ',' + '0,'+ Deg + 'deg)'; 
-                    var Shadow = -(VectorX/Math.abs(VectorX)*0.3) + "vmin " + (VectorY/Math.abs(VectorY)*0.3) + "vmin " + "3px " + "3px " + "red";
-                    SkillBar.boxShadow = Shadow;
-                }
-            });
-            console.log("Skill Bar Operational");
-        })();
-        // Section Scripts
-        // SectionIn
-        var Timeouts = []; // Timeouts "clear this in SectionOut()" - need better name
-        function SectionIn (i) {
-            var Text = document.getElementsByClassName('S' + i + 'Elem');
-            var T = 200;
-            for (var j = 0; j < Text.length; j++) {
-                (function() {
-                    var TextStyle = Text[j].style;
-                    Timeouts.push(setTimeout(function() { TextStyle.opacity = '1'; }, T));
-                })();
-                T += 400;
-            }
-        }
-        // SectionOut
-        function SectionOut(i) {
-            var Text = document.getElementsByClassName('S' + i + 'Elem');
-            for (var j = 0; j < Text.length; j++) {
-                (function() {
-                    Text[j].style.opacity = '0';
-                    clearTimeout(Timeouts[j]); 
-                })();
-            }
-            Timeouts.length = 0;
-        }
-    </script>
+    <script src = 'Script.js'></script>
 </html>

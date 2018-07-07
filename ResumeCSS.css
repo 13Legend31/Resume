@@ -1,0 +1,225 @@
+html, body {
+    margin:0; padding:0; border:none;
+    overflow:hidden;
+    user-select:none;
+}
+div {
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none; 
+}
+#Background {
+    position:absolute;
+    margin:0; padding:0; border:none;
+    left:0; top:0;
+    width:100vw; height:100vh; min-width: 178vh; min-height: 56vw;
+    z-index:-2;
+}
+button {
+    cursor:pointer;
+}
+/*-------------- Scroll ---------------*/
+.VerticalScroll {
+    position:absolute;
+    margin:0; padding:0; border:none;
+    right:4vw; top: 30vh;
+}
+.ScrollIcon {
+    position:relative;
+    margin: 4vh 0 0 0; padding:0; border:2px solid black;
+    display:block;
+    width:0.5vw; height: 1vh;
+    border-radius:50%;
+    background-color:orange;
+    opacity :0.4;
+    transition: background-color 0.4s, opacity 0.4s;
+}
+#First {
+    background-color:red;
+    opacity:1;
+}
+/* ----------------- Content -----------------------*/
+.Section {
+    position: absolute;
+    margin:0; padding:0; border:none;
+    left:0;
+    width:100%; height:100%;
+    z-index:-1;
+    overflow:hidden;
+}
+.SectionTitle {
+    position:absolute;
+    display:inline;
+    opacity:1;
+    font-family:sans-serif; font-weight:500;
+    left:0; top:1vh;
+    font-size:calc(20px + 0.5vw);;
+    transition:0.4s;
+}
+.SectionBG {
+    position:absolute;
+    margin:0; padding:0; border:none;
+    left:0; top:0;
+    width:100%; min-width:178vh; min-height: 100vh;
+    z-index:-1;
+    user-select:none;
+    -webkit-user-drag: none;
+}
+/*-------- S2 - Education --------*/
+.S2Elem {
+    position:absolute;
+    margin:0; padding:0; border:none;
+    min-width:600px;
+    left:3vw;
+    color:white;
+    font-family:sans-serif;
+    opacity:0;
+    transition:0.4s;
+}
+#S2Text1 {
+    top:10vh;
+    font-size:calc(32px + 2vw); font-weight:700;    
+}
+#S2Text2 {
+    top:calc(46px + 2vw + 10vh);
+    font-size:calc(20px + 0.5vw);
+}
+#S2Text3 {
+    top:calc(64px + 3vw + 10vh);
+    font-size:calc(12px + 0.5vw);
+}
+/*-------- S3 - Skills --------*/
+#SkillBar {
+    position:absolute;
+    left:12.5vw; top:37.5vh;
+    width:75vw; height:25vh; min-width: 700px; min-height: 100px;
+    transition:box-shadow 0.3s;
+}
+#SkillBar img {
+    position:absolute;
+    width:20%; height: 100%;
+}
+.S3Elem {
+    position:absolute;
+    margin:0; padding:0; border:none;
+    min-width:600px;
+    left:3vw;
+    color:orangered;
+    font-family:sans-serif;
+    opacity:0;
+    transition:0.4s;
+}
+#S3Text1 {
+    top:10vh; 
+    font-size:calc(32px + 2vw); font-weight:700;       
+}
+/*-------- S4 - RhythmTrack --------*/
+.S4Elem {
+    position:absolute;
+    margin:0; padding:0; border:none;
+    min-width:600px;
+    left:3vw;
+    color:red;
+    font-family:sans-serif;
+    opacity:0;
+    transition:0.4s;
+}
+#I4 {
+    filter:brightness(0.9);
+}
+#S4Title {
+    color:red;
+    filter:brightness(0.9);
+}
+#S4Text1 {
+    top:10vh; 
+    font-size:calc(32px + 2vw); font-weight:700;               
+}
+#S4Text2 {
+    top:calc(46px + 2vw + 10vh);
+    font-size:calc(12px + 0.5vw);
+}
+#GithubRhythmTrack {
+    outline:none;
+    display:inline;
+    min-width:100px; min-height:20px;
+    top:calc(70px + 3vw + 10vh);
+    background-color:lime;
+    border-radius:30%; border: 2px solid purple;
+    color: black;
+    font-size: calc(24px + 0.5vw); font-weight:700;
+}
+#GithubRhythmTrack:hover {
+    background-color:purple;
+}
+/*-------- S5 - Pictures Collector --------*/
+.S5Elem {
+    position:absolute;
+    margin:0; padding:0; border:none;
+    min-width:600px;
+    left:3vw;
+    color:chartreuse;
+    font-family:sans-serif;
+    opacity:0;
+    transition:0.4s;
+}
+#I5 {
+    filter:brightness(0.7);
+}
+#S5Title {
+    color:chartreuse;
+    filter:brightness(0.7);
+}
+#S5Text1 {
+    top:7vh; 
+    font-size:calc(32px + 2vw); font-weight:700;  
+}
+#S5Text2 {
+    top:calc(46px + 2vw + 7vh);
+    font-size:calc(12px + 0.5vw);
+}
+#GithubPicturesCollection {
+    outline:none;
+    display:inline;
+    min-width:100px; min-height:20px;
+    top:calc(70px + 3vw + 7vh);
+    background-color:lime;
+    border-radius:30%; border: 2px solid purple;
+    color: black;
+    font-size: calc(24px + 0.5vw); font-weight:700;
+}
+#GithubPicturesCollection:hover {
+    background-color:purple;
+}
+/*-------- S6 - Turnip Esports --------*/
+.S6Elem {
+    position:absolute;
+    margin:0; padding:0; border:none;
+    min-width:600px;
+    left:3vw;
+    color:gold;
+    font-family:sans-serif;
+    opacity:0;
+    transition:0.4s;
+}
+#I6 {
+    filter:brightness(0.5);
+}
+#S6Title {
+    color:gold;
+    filter:brightness(0.8);
+}
+#S6Text1 {
+    top:10vh;
+    font-size:calc(32px + 2vw); font-weight:700;    
+}
+#S6Text2 {
+    top:calc(46px + 2vw + 10vh);
+    font-size:calc(20px + 0.5vw);
+}
+#S6Text3 {
+    top:calc(64px + 3vw + 10vh);
+    font-size:calc(12px + 0.5vw);
+}
+/*-------------------------*/
