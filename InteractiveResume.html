@@ -6,9 +6,9 @@
     </head>
 
     <body>
-        <img draggable = 'false' id = 'Background' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Space.jpg'>
+        <img ondragstart = 'return false' id = 'Background' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Space.jpg'>
         <!-- Vertical Scroll -->
-        <div class = 'VerticalScroll'>
+        <div id = 'VerticalScroll'>
             <div class = 'ScrollIcon' id = 'First'></div>
             <div class = 'ScrollIcon'></div>
             <div class = 'ScrollIcon'></div>
@@ -20,24 +20,30 @@
         <!-- Sections -->
         <!-- S1 - Introduction -->
         <section class ='Section'>
-            <img draggable = 'false' class = 'SectionBG' id = 'I1'>
+            <img ondragstart = 'return false' class = 'SectionBG' id = 'I1' src = 'https://images.pond5.com/worship-background-modern-edge-blue-footage-026057198_prevstill.jpeg'>
+            <div id = 'LarryWu'>Larry Wu</div>
+            <button class = 'S1Buttons' id = 'EducationButton'>Education</button>
+            <button class = 'S1Buttons' id = 'SkillsButton'>Programming Skills</button>
+            <button class = 'S1Buttons' id = 'RhythmTrackButton'>Rhythm Track</button>
+            <button class = 'S1Buttons' id = 'ImageCollectorButton'>Image Collector</button>
+            <button class = 'S1Buttons' id = 'TurnipEsportsButton'>Turnip Esports</button>
         </section>
         <!-- S2 - Education -->
         <section class ='Section'>
             <div class = 'S2Elem' id = 'S2Text1'>University of Toronto</div>
             <div class = 'S2Elem' id = 'S2Text2'>Rotman School of Management</div>
             <div class = 'S2Elem' id = 'S2Text3'>Bachelor's of Commerce</div>
-            <img draggable = 'false' class = 'SectionBG' id = 'I2' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Rotman.jpg'>
+            <img ondragstart = 'return false' class = 'SectionBG' id = 'I2' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Rotman.jpg'>
         </section>
         <!-- S3 - Skills -->
         <section class ='Section'>
             <div class = 'S3Elem' id = 'S3Text1'>Programming Skills</div>
             <div id = 'SkillBar'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Html.jpg'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Css.jpg'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Javascript.jpg'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/git.jpg'>
-                <img draggable = 'false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/CCpp.jpg'>
+                <img ondragstart = 'return false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Html.jpg'>
+                <img ondragstart = 'return false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Css.jpg'>
+                <img ondragstart = 'return false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/Javascript.jpg'>
+                <img ondragstart = 'return false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/git.jpg'>
+                <img ondragstart = 'return false' class = 'SkillBarImage' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/CCpp.jpg'>
             </div>
         </section>
         <!-- S4 - Rhythm Track -->
@@ -46,7 +52,7 @@
             <div class = 'S4Elem' id = 'S4Text1'> Rhythm Track </div>
             <div class = 'S4Elem' id = 'S4Text2'> Built on Unreal Engine 4</div>
             <button class = 'S4Elem' id = 'GithubRhythmTrack' onclick = 'window.open("https://github.com/13Legend31/RhythmTrack")'> Github </button>
-            <img draggable = 'false' class = 'SectionBG' id = 'I4' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/RhythmTrack.jpg'>
+            <img ondragstart = 'return false' class = 'SectionBG' id = 'I4' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/RhythmTrack.jpg'>
         </section>
         <!-- S5 - Pictures Collection -->
         <section class ='Section'>
@@ -54,7 +60,7 @@
             <div class = 'S5Elem' id = 'S5Text1'>Image Collector</div>
             <div class = 'S5Elem' id = 'S5Text2'>Make Albums Easily</div>
             <button class = 'S5Elem' id = 'GithubPicturesCollection' onclick = 'window.open("https://github.com/13Legend31/Pictures-Website")'> Github </button>
-            <img draggable = 'false' class = 'SectionBG' id = 'I5' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/PicturesCollector.jpg'>
+            <img ondragstart = 'return false' class = 'SectionBG' id = 'I5' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/PicturesCollector.jpg'>
         </section>
         <!-- S6 - Turnip Esports-->
         <section class ='Section'>
@@ -62,10 +68,11 @@
             <div class = 'S6Elem' id = 'S6Text1'>Turnip Esports</div>
             <div class = 'S6Elem' id = 'S6Text2'>Host, Commentator and Coach</div> 
             <div class = 'S6Elem' id = 'S6Text3'>Sponsored by HiRez Studios</div>
-            <img draggable = 'false' class = 'SectionBG' id = 'I6' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/TurnipEsports.jpg'>
+            <img ondragstart = 'return false' class = 'SectionBG' id = 'I6' src = 'https://raw.githubusercontent.com/13Legend31/Resume/master/Images/TurnipEsports.jpg'>
         </section>
+        <!-- S7 - End Section -->
         <section class ='Section'>
-            <img draggable = 'false' class = 'SectionBG' id = 'I7'>
+            <img ondragstart = 'return false' class = 'SectionBG' id = 'I7'>
         </section>
     </body>
     <script src = 'Script.js'></script>

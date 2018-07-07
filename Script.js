@@ -9,6 +9,9 @@ var Sections = [];
     var NumberOfSections = 7;
     var VerticalScroll = []; 
     var Sections = [];
+    setTimeout(function() {
+        document.getElementById('VerticalScroll').style.opacity = '1';
+    },200);
     //------- Load In Variables -------
     var ScrollHide = document.getElementsByClassName('ScrollIcon');
     var Section = document.getElementsByClassName('Section');
@@ -24,58 +27,87 @@ var Sections = [];
     //------- Add Scroll Functionality -------
     var i = 0;
     var ScriptReady = true;
-    function Add_MouseWheel_Functionality (e) {
+    function ScrollTo(next) {
         if (ScriptReady) {
             ScriptReady = false;
-            // Animate right vertical scroll
-            VerticalScroll[i].backgroundColor = 'orange';
-            VerticalScroll[i].opacity = '0.4';
-            window['SectionOut'](i + 1);
-            var up;
-            var inc;
-            if (e.wheelDelta < 0 || e.deltaY > 0) {
-                inc = (i === NumberOfSections - 1) ? false : true;  
-                i = (i === NumberOfSections - 1) ? i : i + 1;
-                up = false;                  
-            } else {
-                inc = (i === 0) ? false : true; 
-                i = (i === 0) ? i : i - 1;
-                up = true;
+            if (next <= 0) 
+                next = 0;
+            else if (next >= NumberOfSections)
+                next = NumberOfSections - 1;
+            if (next != i) {
+            // Animate vertical scroll
+                VerticalScroll[i].backgroundColor = 'orange';
+                VerticalScroll[i].opacity = '0.4';
+                VerticalScroll[next].backgroundColor = 'red';
+                VerticalScroll[next].opacity = '1';
+                window['SectionOut'](i + 1);
             }
-            VerticalScroll[i].backgroundColor = 'red';
-            VerticalScroll[i].opacity = '1';
-            // Move sections up or down
-            for (var c = 0; c < NumberOfSections && inc; c++) {
+            // Move sections
+            var ScrollAmount = (i - next) * 100;
+            for (var c = 0; c < NumberOfSections; c++) {
                 Sections[c].transition = '0.4s';
-                var Top = (up) ? parseInt(Sections[c].top) + 100 : parseInt(Sections[c].top) - 100;
+                var Top = parseInt(Sections[c].top) + ScrollAmount;
                 Sections[c].top = Top + 'vh';
             }
-            window['SectionIn'](i + 1);
+            window['SectionIn'](next + 1);
+            i = next;
             setTimeout(function() { 
                 for (var c = 0; c < NumberOfSections; c++) {
                     Sections[c].transition = '0s';
                 }
             }, 400);
-            setTimeout(function() { ScriptReady = true}, 400);
+            setTimeout(function() { 
+                ScriptReady = true 
+            }, 400);
         }
     }
         // Chrome, Firefox, IE, Edge
-    window.addEventListener('wheel', Add_MouseWheel_Functionality);
+    window.addEventListener('wheel', function(e) { 
+        if (e.wheelDelta < 0 || e.deltaY > 0)
+            ScrollTo(i + 1); 
+        else
+            ScrollTo(i - 1);
+    });
         // Safari
-    window.addEventListener('mousewheel', Add_MouseWheel_Functionality);
-        // Up arrow/Down arrow functionality
+    window.addEventListener('mousewheel', function(e) { 
+        if (e.wheelDelta < 0 || e.deltaY > 0)
+            ScrollTo(i + 1); 
+        else
+            ScrollTo(i - 1);
+    });
+        // Up/Left arrow + Down/Right arrow functionality
     window.addEventListener('keydown', function(e) { 
-        if (e.keyCode == 38) {
+        if (e.keyCode === 37 || e.keyCode === 38) {
             e.WheelDelta = 1;
             Add_MouseWheel_Functionality(e); 
-        } else if (e.keyCode == 40) {
+        } else if (e.keyCode === 39 || e.keyCode === 40) {
             e.wheelDelta = -1;
             Add_MouseWheel_Functionality(e);
         }
     });
     console.log("Scrolling Functional");
     // SECTION SPECIFIC SCRIPTS
-    // S4 -Set skill bar image positions
+    // S1 - Add Button Functionality and Fade In
+    var S1Buttons = document.getElementsByClassName('S1Buttons');
+    for (var c = 0; c < S1Buttons.length; c++) {
+        (function() { 
+            var b = c;
+            S1Buttons[b].addEventListener('click', function() { ScrollTo(b + 1); });
+            setTimeout(function() { 
+                S1Buttons[b].style.opacity = '0.5';
+                S1Buttons[b].style.top = '70vh';
+                S1Buttons[b].addEventListener('mouseover', function() {
+                    S1Buttons[b].style.opacity = '1';
+                });
+                S1Buttons[b].addEventListener('mouseout', function() {
+                    S1Buttons[b].style.opacity = '0.5';
+                });
+            }, 400);
+        })();
+    }
+    var LarryWu = document.getElementById('LarryWu');
+    setTimeout(function() {LarryWu.style.opacity = '1'},200);    
+    // S4 - Set skill bar image positions
     var SkillBarImages = document.getElementsByClassName('SkillBarImage'); 
     var Left = 0;
     for (var c = 0; c < SkillBarImages.length; c++, Left += 20) {
@@ -101,9 +133,10 @@ var Sections = [];
     });
     console.log("Skill Bar Operational");
 })();
+
 // Section Scripts
 // SectionIn
-var Timeouts = []; // Timeouts "clear this in SectionOut()" - need better name
+var Timeouts = []; // Timeouts "clear this in SectionOut()"
 function SectionIn (i) {
     var Title = document.getElementById('S' + i + 'Title');
     if (Title)
