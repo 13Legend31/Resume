@@ -88,11 +88,11 @@
                 font-size:calc(32px + 2vw); font-weight:700;    
             }
             #S2Text2 {
-                top:calc(80px + 10vh);
+                top:calc(46px + 2vw + 10vh);
                 font-size:calc(20px + 0.5vw);
             }
             #S2Text3 {
-                top:calc(120px + 10vh);
+                top:calc(64px + 3vw + 10vh);
                 font-size:calc(12px + 0.5vw);
             }
             /*-------- S3 - Skills --------*/
@@ -129,14 +129,14 @@
                 font-size:calc(32px + 2vw); font-weight:700;               
             }
             #S4Text2 {
-                top:calc(80px + 10vh);
+                top:calc(46px + 2vw + 10vh);
                 font-size:calc(12px + 0.5vw);
             }
             #GithubRhythmTrack {
                 outline:none;
                 display:inline;
                 min-width:100px; min-height:20px;
-                top:calc(120px + 10vh);
+                top:calc(70px + 3vw + 10vh);
                 background-color:lime;
                 border-radius:30%; border: 2px solid purple;
                 color: black;
@@ -164,14 +164,14 @@
                 font-size:calc(32px + 2vw); font-weight:700;  
             }
             #S5Text2 {
-                top:calc(85px + 7vh);
+                top:calc(46px + 2vw + 7vh);
                 font-size:calc(12px + 0.5vw);
             }
             #GithubPicturesCollection {
                 outline:none;
                 display:inline;
                 min-width:100px; min-height:20px;
-                top:calc(120px + 7vh);
+                top:calc(70px + 3vw + 7vh);
                 background-color:lime;
                 border-radius:30%; border: 2px solid purple;
                 color: black;
@@ -199,11 +199,11 @@
                 font-size:calc(32px + 2vw); font-weight:700;    
             }
             #S6Text2 {
-                top:calc(80px + 10vh);
+                top:calc(46px + 2vw + 10vh);
                 font-size:calc(20px + 0.5vw);
             }
             #S6Text3 {
-                top:calc(120px + 10vh);
+                top:calc(64px + 3vw + 10vh);
                 font-size:calc(12px + 0.5vw);
             }
         </style>
@@ -230,8 +230,8 @@
         <section class ='Section'>
             <div class = 'S2Elem' id = 'S2Text1'>University of Toronto</div>
             <div class = 'S2Elem' id = 'S2Text2'>Rotman School of Management</div>
-            <div class = 'S2Elem' id = 'S2Text3'>Honours Bachelor's of Commerce</div>
-            <img draggable = 'false' class = 'SectionBG' id = 'I2'>
+            <div class = 'S2Elem' id = 'S2Text3'>Bachelor's of Commerce</div>
+            <img draggable = 'false' class = 'SectionBG' id = 'I2' src = 'Images/Rotman.jpg'>
         </section>
         <!-- S3 - Skills -->
         <section class ='Section'>
@@ -271,13 +271,17 @@
     </body>
     <script>
         'use strict';
-        // All arrays must have same length (# of sections)
+        // All arrays must have length NumberOfSections
         var NumberOfSections = 7;
         var VerticalScroll = []; 
         var Sections = [];
-        // Executed on load
-        // Loads in all variables
+        // Initializes Page for use
         (function() {
+            // Section related variables            
+            var NumberOfSections = 7;
+            var VerticalScroll = []; 
+            var Sections = [];
+            //------- Load In Variables -------
             var ScrollHide = document.getElementsByClassName('ScrollIcon');
             var Section = document.getElementsByClassName('Section');
             for (var i = 0; i < NumberOfSections; i++) {
@@ -289,10 +293,8 @@
                 Sections[i].top = Top + 'vh';
             }
             console.log("Variables Initialized");
-        })();
-        var i = 0;
-        //------- Add Scroll Functionality -------
-        (function() {
+            //------- Add Scroll Functionality -------
+            var i = 0;
             var ScriptReady = true;
             function Add_MouseWheel_Functionality (e) {
                 if (ScriptReady) {
@@ -334,16 +336,14 @@
             // Safari
             window.addEventListener('mousewheel', Add_MouseWheel_Functionality);
             console.log("Scroll Wheel Functional");
-        })();        
-        // [Skills Section] initialize variables and add MouseMove listener
-        (function() {
-            // Initialize Skillbar image positions
+            // SECTION SPECIFIC SCRIPTS
+            // S4 -Initialize Skillbar image positions
             var SkillBarImages = document.getElementsByClassName('SkillBarImage'); 
             var Left = 0;
             for (var c = 0; c < SkillBarImages.length; c++, Left += 20) {
                 SkillBarImages[c].style.left = Left + '%';
             }
-            // Add SkillBar movement functionality
+            // S4 - Add SkillBar movement functionality
             var SkillBar = document.getElementById('SkillBar').style;
             window.addEventListener('mousemove', function(e) {
                 if (i === 2) {
@@ -365,16 +365,16 @@
         })();
         // Section Scripts
         // SectionIn
-        var TOs = []; // Timeouts "clear this in SectionOut()" - need better name
+        var Timeouts = []; // Timeouts "clear this in SectionOut()" - need better name
         function SectionIn (i) {
             var Text = document.getElementsByClassName('S' + i + 'Elem');
-            var Timeout = 200;
+            var T = 200;
             for (var j = 0; j < Text.length; j++) {
                 (function() {
                     var TextStyle = Text[j].style;
-                    TOs.push(setTimeout(function() { TextStyle.opacity = '1'; }, Timeout));
+                    Timeouts.push(setTimeout(function() { TextStyle.opacity = '1'; }, T));
                 })();
-                Timeout += 400;
+                T += 400;
             }
         }
         // SectionOut
@@ -383,10 +383,10 @@
             for (var j = 0; j < Text.length; j++) {
                 (function() {
                     Text[j].style.opacity = '0';
-                    clearTimeout(TOs[j]); 
+                    clearTimeout(Timeouts[j]); 
                 })();
             }
-            TOs.length = 0;
+            Timeouts.length = 0;
         }
     </script>
 </html>
