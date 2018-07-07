@@ -77,13 +77,10 @@ var Sections = [];
     });
         // Up/Left arrow + Down/Right arrow functionality
     window.addEventListener('keydown', function(e) { 
-        if (e.keyCode === 37 || e.keyCode === 38) {
-            e.WheelDelta = 1;
-            Add_MouseWheel_Functionality(e); 
-        } else if (e.keyCode === 39 || e.keyCode === 40) {
-            e.wheelDelta = -1;
-            Add_MouseWheel_Functionality(e);
-        }
+        if (e.keyCode === 37 || e.keyCode === 38) 
+            ScrollTo(i - 1); 
+        else if (e.keyCode === 39 || e.keyCode === 40) 
+            ScrollTo(i + 1);
     });
     console.log("Scrolling Functional");
     // SECTION SPECIFIC SCRIPTS
